@@ -1,0 +1,21 @@
+/* Wedding invite design tokens. All text pairs >= 4.5:1 (checked in gen_invite_art.py; see contrast.json).
+   --accent is decoration only (ornaments, borders); use --accent-text for any accent-coloured text. */
+:root{--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--radius-card:18px;--radius-btn:999px;--content-max:430px;--tap-min:48px}
+[data-style="classic"]{--c-primary:#8E1B1B;--c-accent:#C8922A;--c-accent-text:#7A5512;--c-bg:#FFF8EE;--c-surface:#FFFFFF;--c-soft:#F6E3C3;--c-ink:#2D1A12;--c-muted:#5C4033;--c-on-primary:#FFFFFF;--f-display:'Playfair Display',Georgia,serif;--f-body:'Poppins',system-ui,sans-serif;--f-hi-display:'Yatra One',"Noto Serif Devanagari",serif;--f-hi-body:'Tiro Devanagari Hindi',"Noto Serif Devanagari",serif;--art-hero:url("classic/hero.svg");--art-divider:url("classic/divider.svg");--art-corner:url("classic/corner.svg");--art-pattern:url("classic/pattern.svg")}
+[data-style="floral"]{--c-primary:#8A3352;--c-accent:#E7A9B9;--c-accent-text:#7A3A4E;--c-bg:#FDF6F4;--c-surface:#FFFFFF;--c-soft:#F4DDE3;--c-ink:#3B2A2F;--c-muted:#5E4A50;--c-on-primary:#FFFFFF;--f-display:'Great Vibes',Georgia,serif;--f-body:'Cormorant Garamond',system-ui,sans-serif;--f-hi-display:'Tiro Devanagari Hindi',"Noto Serif Devanagari",serif;--f-hi-body:'Tiro Devanagari Hindi',"Noto Serif Devanagari",serif;--art-hero:url("floral/hero.svg");--art-divider:url("floral/divider.svg");--art-corner:url("floral/corner.svg");--art-pattern:url("floral/pattern.svg")}
+[data-style="emerald"]{--c-primary:#0D5C4A;--c-accent:#B8913A;--c-accent-text:#6E5414;--c-bg:#F6F4EC;--c-surface:#FFFFFF;--c-soft:#E3EBDF;--c-ink:#13241F;--c-muted:#3F524C;--c-on-primary:#FFFFFF;--f-display:'Cormorant Garamond',Georgia,serif;--f-body:'Poppins',system-ui,sans-serif;--f-hi-display:'Tiro Devanagari Hindi',"Noto Serif Devanagari",serif;--f-hi-body:'Noto Serif Devanagari',"Noto Serif Devanagari",serif;--art-hero:url("emerald/hero.svg");--art-divider:url("emerald/divider.svg");--art-corner:url("emerald/corner.svg");--art-pattern:url("emerald/pattern.svg")}
+[data-style="minimal"]{--c-primary:#1F2A37;--c-accent:#A48A5A;--c-accent-text:#6E5A35;--c-bg:#FBFAF7;--c-surface:#FFFFFF;--c-soft:#EEEAE2;--c-ink:#1F2328;--c-muted:#4B5563;--c-on-primary:#FFFFFF;--f-display:'Cormorant Garamond',Georgia,serif;--f-body:'Poppins',system-ui,sans-serif;--f-hi-display:'Noto Serif Devanagari',"Noto Serif Devanagari",serif;--f-hi-body:'Noto Serif Devanagari',"Noto Serif Devanagari",serif;--art-hero:url("minimal/hero.svg");--art-divider:url("minimal/divider.svg");--art-corner:url("minimal/corner.svg");--art-pattern:url("minimal/pattern.svg")}
+/* RSVP button (one rule, styled per theme via tokens) */
+.rsvp-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:var(--tap-min);padding:0 28px;border:0;border-radius:var(--radius-btn);background:var(--c-primary);color:var(--c-on-primary);font:600 1rem/1 var(--f-body);letter-spacing:.04em;cursor:pointer;text-decoration:none}
+.rsvp-btn:focus-visible{outline:3px solid var(--c-accent-text);outline-offset:3px}
+[data-style="classic"] .rsvp-btn{box-shadow:0 0 0 2px var(--c-bg),0 0 0 4px var(--c-accent)}
+[data-style="floral"] .rsvp-btn{border-radius:24px 6px 24px 6px;box-shadow:0 4px 14px rgba(138,51,82,.25)}
+[data-style="emerald"] .rsvp-btn{border-radius:22px 22px 6px 6px;box-shadow:0 0 0 2px var(--c-bg),0 0 0 3px var(--c-accent)}
+[data-style="minimal"] .rsvp-btn{border-radius:2px;letter-spacing:.18em;text-transform:uppercase;font-size:.85rem}
+.rsvp-btn.secondary{background:transparent;color:var(--c-primary);box-shadow:inset 0 0 0 2px var(--c-primary)}
+/* Art helpers */
+.art-bg{background-color:var(--c-bg);background-image:var(--art-pattern)}
+.art-hero{display:block;width:100%;max-width:390px;height:auto;margin:0 auto}
+.art-divider{display:block;width:100%;max-width:390px;height:auto;margin:var(--space-5) auto}
+.art-frame{position:relative}.art-frame::before,.art-frame::after{content:"";position:absolute;width:72px;height:72px;background:var(--art-corner) no-repeat center/contain;pointer-events:none}
+.art-frame::before{top:6px;left:6px}.art-frame::after{top:6px;right:6px;transform:scaleX(-1)}
